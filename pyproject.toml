@@ -1,0 +1,19 @@
+[project]
+name = "complexity"
+version = "0.1.0"
+description = "Tools for studying complexity."
+authors = [
+    {name = "Chris Hughes", email = "hughes036@gmail.com"},
+]
+dependencies = []
+requires-python = ">=3.9"
+readme = "README.md"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+
+[tool.pdm]
+package-type = "library"
