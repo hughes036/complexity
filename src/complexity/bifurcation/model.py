@@ -1,7 +1,7 @@
 import numpy as np
-from complexity.bifurcation.i_logistic_map_factory import IMapFuncFactory
 
 from complexity.bifurcation.i_map_func import IMapFunc
+from complexity.bifurcation.i_map_func_factory import IMapFuncFactory
 
 
 class Model:
