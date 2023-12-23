@@ -1,11 +1,13 @@
 import matplotlib.pyplot as plt
+from complexity.bifurcation.cubic.cubic_map_func_factory import CubicMapFuncFactory
 from complexity.bifurcation.logistic.logistic_map_func_factory import LogisticMapFuncFactory
 
 from complexity.bifurcation.model import Model
 
 
 def plot():
-    r_orbits_model: Model = Model(LogisticMapFuncFactory())
+    # r_orbits_model: Model = Model(LogisticMapFuncFactory())
+    r_orbits_model: Model = Model(CubicMapFuncFactory())
 
     for r, x_vals in r_orbits_model.get_r_orbits().items():
         plt.scatter(
