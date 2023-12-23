@@ -1,13 +1,13 @@
-import numpy as np
 import matplotlib.pyplot as plt
+from complexity.bifurcation.logistic_map_func_factory import LogisticMapFuncFactory
 
 from complexity.bifurcation.model import Model
 
 
 def plot():
-    r_orbits: Model = Model()
+    r_orbits_model: Model = Model(LogisticMapFuncFactory())
 
-    for r, x_vals in r_orbits.get_r_orbits().items():
+    for r, x_vals in r_orbits_model.get_r_orbits().items():
         plt.scatter(
             x=list(
                 map(lambda x: r, x_vals)

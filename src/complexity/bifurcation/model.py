@@ -1,17 +1,17 @@
 import numpy as np
+from complexity.bifurcation.i_logistic_map_factory import IMapFuncFactory
 
 from complexity.bifurcation.i_map_func import IMapFunc
-from complexity.bifurcation.logistic_map_func import LogisticMapFunc
 
 
 class Model:
     def __init__(
-        self, r_increment=0.01, init_x_val=0.5, iterations=1000, orbits_to_skip=500
+        self, map_func_factory: IMapFuncFactory, r_increment=0.01, init_x_val=0.5, iterations=1000, orbits_to_skip=500
     ):
         self._r_orbits = {}
         for r in np.arange(0.1, 4.1, r_increment):
             x_vals = self.iterate(
-                map_func=LogisticMapFunc(
+                map_func=map_func_factory.create(
                     r
                 ),  #  map type needs to be passed in constructor,
                 x_init=init_x_val,
