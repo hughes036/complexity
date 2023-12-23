@@ -7,4 +7,4 @@ class CubicMapFuncFactory(IMapFuncFactory):
         pass
 
     def create(self, a):
-        return CubicMapFunc(a)
+        return CubicMapFunc(a) # TODO how to handle RuntimeWarning: overflow encountered in scalar power (produces 'inf' value)

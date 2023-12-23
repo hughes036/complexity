@@ -1,4 +1,7 @@
-from complexity.bifurcation.logistic.logistic_map_func_factory import LogisticMapFuncFactory
+from complexity.bifurcation.cubic.cubic_map_func_factory import CubicMapFuncFactory
+from complexity.bifurcation.logistic.logistic_map_func_factory import (
+    LogisticMapFuncFactory,
+)
 from complexity.bifurcation.model import Model
 
 
@@ -20,3 +23,18 @@ def test_logistic_map_model():
             0.5238095238083065,
         ],
     }
+
+
+def test_cubic_map_model_sm_iterates():
+    model = Model(CubicMapFuncFactory(), r_increment=2, iterations=8, orbits_to_skip=5)
+    assert model.get_r_orbits() == {
+        0.1: [-0.9264346554956896, -0.926335343167266],
+        2.1: [389349.61471376405, 4.825899704336779e22], #TODO 5th iteration of this produces 'inf'.  How to deal?
+    }
+
+# def test_cubic_map_model_md_iterates():
+#     model = Model(CubicMapFuncFactory(), r_increment=2, iterations=20, orbits_to_skip=5)
+#     assert model.get_r_orbits() == {
+#         0.1: [-0.9264346554956896, -0.926335343167266],
+#         2.1: [389349.61471376405, 4.825899704336779e22], #TODO 5th iteration of this produces 'inf'.  How to deal?
+#     }

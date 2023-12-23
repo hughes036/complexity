@@ -5,5 +5,5 @@ class LogisticMapFunc(IMapFunc):
     def __init__(self, r):
         self.r = r
 
-    def __call__(self, y):
+    def interate(self, y):
         return self.r * y * (1 - y)
