@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-from complexity.bifurcation.logistic_map_func_factory import LogisticMapFuncFactory
+from complexity.bifurcation.logistic.logistic_map_func_factory import LogisticMapFuncFactory
 
 from complexity.bifurcation.model import Model
 

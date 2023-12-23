@@ -1,5 +1,5 @@
 from complexity.bifurcation.i_map_func_factory import IMapFuncFactory
-from complexity.bifurcation.logistic_map_func import LogisticMapFunc
+from complexity.bifurcation.logistic.logistic_map_func import LogisticMapFunc
 
 
 class LogisticMapFuncFactory(IMapFuncFactory):
