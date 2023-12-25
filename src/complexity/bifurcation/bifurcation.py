@@ -11,7 +11,7 @@ from complexity.bifurcation.model import Model
 
 def plot():
     # model: Model = Model(LogisticMapFuncFactory())
-    model: Model = Model(CubicMapFuncFactory(), init_y_val=.9, iterations=1000, orbits_to_skip=900)
+    model: Model = Model(CubicMapFuncFactory(), init_y_val=.9, iterations=1000, orbits_to_skip=800)
     fig, (ax1, ax2) = plt.subplots(2)
     fig.suptitle('Bifurcation Diagram')
     ax1.set_title('R Plot')
@@ -27,13 +27,13 @@ def plot():
                 map(lambda s: 0.05, x_vals)
             ),  # A list of the size of the dots (repeated) the same length as x_vals
             c = '#347deb',
-            label='orbits'
         )
 
 
     def on_click(event):
         if event.inaxes == ax1:
             ax2.clear()
+            ax2.set_title('Time Plot')
             closest_r = model.closest_r_value(event.xdata) 
             y_vals = model.get_r_orbits()[closest_r][-50:]
             x_vals = list(range(0, len(y_vals)))
