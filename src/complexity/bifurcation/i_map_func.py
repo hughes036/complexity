@@ -9,7 +9,7 @@ class IMapFunc(ABC):
         try:
             return self.interate(y)
         except RuntimeWarning:
-            # TODO how to handle RuntimeWarning: overflow encountered in scalar power (produces 'inf' value)
+            # TODO @hughes036 how to handle RuntimeWarning: overflow encountered in scalar power (produces 'inf' value)
             # for some reason, this is not caught by the except clause
             return float("inf")
     @abstractmethod

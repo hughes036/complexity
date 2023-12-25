@@ -14,7 +14,8 @@ class Model:
         orbits_to_skip=500,
     ):
         self._r_orbits = {}
-        for r in np.arange(0.1, 4.1, r_increment):
+        self._r_values = np.arange(0.1, 4.1, r_increment)
+        for r in self._r_values:
             y_vals = self._iterate(
                 map_func=map_func_factory.create(
                     r
@@ -36,3 +37,9 @@ class Model:
 
     def get_r_orbits(self):
         return self._r_orbits
+    
+    def get_r_values(self):
+        return self._r_values
+    
+    def closest_r_value(self, r):
+        return min(self._r_values, key=lambda x:abs(x-r))
